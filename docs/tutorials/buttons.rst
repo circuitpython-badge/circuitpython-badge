@@ -49,5 +49,7 @@ To create a delay in the loop, this example uses::
     badge.tick(0.2)
 
 This has the same function as::
+
     time.sleep(0.2)
+
 but removes the need to import time.
