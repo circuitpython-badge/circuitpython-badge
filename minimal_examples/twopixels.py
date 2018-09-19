@@ -1,5 +1,4 @@
 import badge
-import time
 
 badge.init()
 
