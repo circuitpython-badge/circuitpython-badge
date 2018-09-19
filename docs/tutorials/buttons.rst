@@ -44,8 +44,10 @@ There are eight buttons on the badge::
     badge.K_X
     badge.K_Z
 
+
 Other Examples
 =======
 
 buttonsmovepixels.py
+
 The above example uses all eight buttons to move two pixels around the screen.
