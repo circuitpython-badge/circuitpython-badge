@@ -11,7 +11,7 @@ are very similar, the library selects only 16 distinct shades that you can use.
 Example 1: twopixels.py
 =============
 
-The following example creates two pixels on the screen::
+The following example turns on two leds on the badge::
 
     import badge
 
@@ -38,24 +38,23 @@ Example 2: pixfade.py
 The following example uses loops to fade all the leds on the badge::
 
     import badge
-    import random
 
     badge.init()
 
     screen = badge.Pix()
-
+    
     def fadeinout():
         # f is the current step brightness and x/y to set LED in the grid:
-        for f in range(10):
-            for x in range(14):
-                for y in range(11):
+        for f in range(screen.height):
+            for x in range(screen.width):
+                for y in range(screen.height):
                     screen.pixel(x, y, f)
             badge.show(screen)
             badge.tick(0.01)
 
-        for f in range(10):
-            for x in range(14):
-                for y in range(11):
+        for f in range(screen.height):
+            for x in range(screen.width):
+                for y in range(screen.height):
                     screen.pixel(x, y, 10-f)
             badge.show(screen)
             badge.tick(0.01)
@@ -71,3 +70,45 @@ This has the same function as::
     time.sleep(0.2)
 
 but removes the need to import time.
+
+Example 3: blitscrollingtext.py
+=============
+
+The following example scrolls text across the badge::
+
+    import badge
+
+    badge.init()
+
+    text = badge.Pix.from_text('Hello badge!')
+
+    screen = badge.Pix()
+
+    # Start the text just off the right side of the screen
+    x_pos = screen.width
+    y_pos = 3       # 3 pixels below the top of the screen to improve formatting
+
+    while True:
+        badge.tick(0.2)
+
+        # Move the text left, until it's completely off the screen
+        x_pos -= 1
+        if x_pos < -text.width:
+            x_pos = screen.width
+
+        # Draw the text onto the screen in its current position
+        screen.blit(text, x_pos, y_pos)
+
+        badge.show(screen)
+
+This introduces two new methods, firstly::
+
+    text = badge.Pix.from_text('Hello badge!')
+
+This allows you to chose the text to be scrolled.
+
+Secondly::
+
+    screen.blit(IMAGE, POS_X, POS_Y)
+
+Specify an image (or in the above example, our text), to be drawn on the given position on the screen.
