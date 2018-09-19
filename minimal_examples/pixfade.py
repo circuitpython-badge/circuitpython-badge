@@ -15,15 +15,15 @@ p = badge.Pix()
 def fadeinout():
     # f is the current step brightness and x/y to set LED in the grid:
     for f in range(10):
-        for x in range(14):
-            for y in range(11):
+        for x in range(p.width):
+            for y in range(p.height):
                 p.pixel(x, y, f)
         badge.show(p)
         badge.tick(0.01)
                 
     for f in range(10):
-        for x in range(14):
-            for y in range(11):
+        for x in range(p.width):
+            for y in range(p.height):
                 p.pixel(x, y, 9-f)
         badge.show(p)
         badge.tick(0.01)
