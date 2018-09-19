@@ -16,9 +16,6 @@ RIGHT_BUTTONS = {
     badge.K_O: (1, 0),  # RIGHT
 }
 
-SCREEN_HEIGHT = 11
-SCREEN_WIDTH = 14
-
 left_pos = [3, 3]
 right_pos = [10, 7]
 
@@ -34,13 +31,13 @@ while True:
 
     for button, direction in LEFT_BUTTONS.items():
         if button & keys_pressed:
-            left_pos[0] = (left_pos[0] + direction[0]) % SCREEN_WIDTH
-            left_pos[1] = (left_pos[1] + direction[1]) % SCREEN_HEIGHT
+            left_pos[0] = (left_pos[0] + direction[0]) % screen.width
+            left_pos[1] = (left_pos[1] + direction[1]) % screen.height
 
     for button, direction in RIGHT_BUTTONS.items():
         if button & keys_pressed:
-            right_pos[0] = (right_pos[0] + direction[0]) % SCREEN_WIDTH
-            right_pos[1] = (right_pos[1] + direction[1]) % SCREEN_HEIGHT
+            right_pos[0] = (right_pos[0] + direction[0]) % screen.width
+            right_pos[1] = (right_pos[1] + direction[1]) % screen.height
 
     screen = badge.Pix()
     screen.pixel(left_pos[0], left_pos[1], 10)
