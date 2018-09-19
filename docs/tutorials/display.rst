@@ -31,3 +31,43 @@ Choose a WIDTH between 0 and 13, a HEIGHT between 0 and 10, and a brightness bet
 Your chosen pixels will not show up on the screen until you use::
 
     badge.show()
+
+Example 2: pixfade.py
+=============
+
+The following example uses loops to fade all the leds on the badge::
+
+    import badge
+    import random
+
+    badge.init()
+
+    screen = badge.Pix()
+
+    def fadeinout():
+        # f is the current step brightness and x/y to set LED in the grid:
+        for f in range(10):
+            for x in range(14):
+                for y in range(11):
+                    screen.pixel(x, y, f)
+            badge.show(screen)
+            badge.tick(0.01)
+
+        for f in range(10):
+            for x in range(14):
+                for y in range(11):
+                    screen.pixel(x, y, 10-f)
+            badge.show(screen)
+            badge.tick(0.01)
+
+    fadeinout()
+
+To create a delay of 0.2 seconds in the loop, this example uses::
+
+    badge.tick(0.2)
+
+This has the same function as::
+
+    time.sleep(0.2)
+
+but removes the need to import time.
