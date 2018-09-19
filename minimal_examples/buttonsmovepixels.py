@@ -1,5 +1,4 @@
 import badge
-import time
 
 badge.init()
 
@@ -30,7 +29,7 @@ badge.show(screen)
 
 
 while True:
-    time.sleep(0.2)
+    badge.tick(0.2)
     keys_pressed = badge.keys()
 
     for button, direction in LEFT_BUTTONS.items():
