@@ -20,6 +20,7 @@ while True:
 
     # ...and draw the text block position 3 pixels below the top of screen,
     # and starting at the current x_pos
+    # (blit draws the specified image in the given position on the screen)
     screen.blit(text, x_pos, 3)
 
     badge.show(screen)
