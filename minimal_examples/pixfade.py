@@ -28,8 +28,13 @@ def fadeinout():
         badge.show(p)
         badge.tick(0.01)
 
+# if you want to fade in and out once:
+
+fadeinout()
+
 # If you want to run the fade in a loop, uncomment the lines below:
-    # Alternatively import pixfade and use pixfade.fadeinout()
     
 #while True:
 #    fadeinout()
+
+# Alternatively import pixfade and use pixfade.fadeinout()
