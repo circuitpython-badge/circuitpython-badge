@@ -20,7 +20,7 @@ def randomfuzz(density):
 
     badge.show(p)
 
-    # Generate 10 random pixels
+    # Generate (n) randomly positioned pixels
     for i in range(density):
         rx = randint(0, p.width)
         ry = randint(0, p.height)
@@ -48,9 +48,10 @@ def randombar():
 
     badge.show(p)
 
+    # store a random number for the next bar position
     bar = randint(0, (p.height-1))
 
-    # Generate a random bar
+    # Generate a random bar and fade over time
     for i in range(17):
         for x in range(p.width):
             p.pixel(x, bar, (16-i))
@@ -75,6 +76,7 @@ def randomdrops():
 
     badge.show(p)
 
+    # store a random number for the next drop position
     drops = randint(0, (p.width-1))
 
     # Generate a random drop
