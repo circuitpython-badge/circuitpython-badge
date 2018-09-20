@@ -45,8 +45,8 @@ while True:
 			ynew = 0
 	elif a[1] > 500:
 		ynew = ypos + 1
-		if ynew > 11:
-			ynew = 11	
+		if ynew > 10:
+			ynew = 10	
 	
 	update(xpos, ypos, xnew, ynew, 10)
 	xpos = xnew
