@@ -1,8 +1,9 @@
 '''
 circuitpython-badge/minimal_examples/pixfade.py
 
-A basic example using loops to fade all the leds on the badge :D
+Some animations using loops to fade all the leds on the badge :D
 
+Aidan T 2018
 '''
 
 import badge

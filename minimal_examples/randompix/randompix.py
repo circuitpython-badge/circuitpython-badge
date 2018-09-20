@@ -1,7 +1,9 @@
 '''
 circuitpython-badge/minimal_examples/randompix.py
 
-A selection of randomised animations
+A selection of random infested animations
+
+Aidan T 2018
 '''
 
 import badge
