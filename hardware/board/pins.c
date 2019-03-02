@@ -1,4 +1,4 @@
-#include "samd21_pins.h"
+#include "shared-bindings/board/__init__.h"
 
 STATIC const mp_rom_map_elem_t board_global_dict_table[] = {
     { MP_ROM_QSTR(MP_QSTR_SDA), MP_ROM_PTR(&pin_PA00) },
@@ -7,6 +7,7 @@ STATIC const mp_rom_map_elem_t board_global_dict_table[] = {
 
     { MP_ROM_QSTR(MP_QSTR_RADIO0), MP_ROM_PTR(&pin_PA03) },
     { MP_ROM_QSTR(MP_QSTR_RADIO1), MP_ROM_PTR(&pin_PA04) },
+    { MP_ROM_QSTR(MP_QSTR_RADIO2), MP_ROM_PTR(&pin_PA22) },
     { MP_ROM_QSTR(MP_QSTR_RADIO3), MP_ROM_PTR(&pin_PA05) },
     { MP_ROM_QSTR(MP_QSTR_RADIO4), MP_ROM_PTR(&pin_PA06) },
     { MP_ROM_QSTR(MP_QSTR_RADIO5), MP_ROM_PTR(&pin_PA07) },
